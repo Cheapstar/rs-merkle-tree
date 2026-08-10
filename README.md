@@ -3,7 +3,6 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/bilinearlabs/rs-merkle-tree/rust_main_ci.yml?style=flat-square)
 ![Codecov (with branch)](https://img.shields.io/codecov/c/github/bilinearlabs/rs-merkle-tree/main?token=1PIHE7U7XQ&style=flat-square)
 ![GitHub License](https://img.shields.io/github/license/bilinearlabs/rs-merkle-tree?style=flat-square)
-[![Join our Discord](https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=white&style=flat-square)](https://discord.gg/Et8BTnVBZS)
 
 Merkle tree implementation in Rust with the following features:
 * Fixed depth: All proofs have a constant size equal to the `Depth`.
@@ -112,6 +111,14 @@ fn main() {
 }
 ```
 
+## Tests
+
+
+Run all tests
+```
+cargo test --all-features
+```
+
 ## Stores
 
 The following stores are supported:
@@ -147,21 +154,21 @@ python benchmarks.py
 
 | Depth | Hash | Leaves | Batch | Store | Throughput | p50 batch | p99 batch | Disk |
 |---|---|---|---|---|---|---|---|---|
-| 32 | keccak256 | 5000000 | 100000 | file | 25.181 Melem/s | 3.655 ms | 8.674 ms | 305.18 MiB |
-| 32 | keccak256 | 5000000 | 100000 | memory | 23.146 Melem/s | 3.995 ms | 7.106 ms | - |
-| 32 | keccak256 | 5000000 | 100000 | rocksdb | 4.329 Melem/s | 22.887 ms | 27.705 ms | 434.44 MiB |
-| 32 | keccak256 | 5000000 | 100000 | sqlite | 910.493 Kelem/s | 109.710 ms | 129.759 ms | 590.39 MiB |
-| 32 | keccak256 | 5000000 | 100000 | sled | 248.482 Kelem/s | 397.198 ms | 513.669 ms | 1.57 GiB |
+| 32 | keccak256 | 5000000 | 100000 | memory | 39.313 Melem/s | 2.427 ms | 4.635 ms | - |
+| 32 | keccak256 | 5000000 | 100000 | file | 37.368 Melem/s | 2.395 ms | 12.944 ms | 305.18 MiB |
+| 32 | keccak256 | 5000000 | 100000 | rocksdb | 4.417 Melem/s | 21.372 ms | 36.797 ms | 434.44 MiB |
+| 32 | keccak256 | 5000000 | 100000 | sqlite | 865.615 Kelem/s | 114.323 ms | 162.012 ms | 590.39 MiB |
+| 32 | keccak256 | 5000000 | 100000 | sled | 247.057 Kelem/s | 399.358 ms | 594.720 ms | 1.61 GiB |
 
 ### `proof` time
 
 | Depth | Hash | Store | Time |
 |---|---|---|---|
-| 32 | keccak256 | memory | 193.740 ns |
-| 32 | keccak256 | file | 4.888 µs |
-| 32 | keccak256 | sled | 6.679 µs |
-| 32 | keccak256 | sqlite | 11.727 µs |
-| 32 | keccak256 | rocksdb | 14.041 µs |
+| 32 | keccak256 | memory | 195.890 ns |
+| 32 | keccak256 | file | 4.899 µs |
+| 32 | keccak256 | sled | 6.528 µs |
+| 32 | keccak256 | sqlite | 11.621 µs |
+| 32 | keccak256 | rocksdb | 14.129 µs |
 
 ## License
 
