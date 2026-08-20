@@ -79,6 +79,10 @@ pub mod stores {
     mod rocksdb_store;
     #[cfg(feature = "rocksdb_store")]
     pub use rocksdb_store::RocksDbStore;
+    #[cfg(feature = "rocksdb_store_v2")]
+    mod rocksdb_store_v2;
+    #[cfg(feature = "rocksdb_store_v2")]
+    pub use rocksdb_store_v2::RocksDbStoreV2;
     #[cfg(feature = "file_store")]
     mod file_store;
     #[cfg(feature = "file_store")]
